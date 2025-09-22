@@ -6,9 +6,10 @@
             </div>
             <div class="hidden md:block">
                 <div class="ml-10 flex items-baseline space-x-4">
-                    <x-nav-link to="/">Home</x-nav-link>
-                    <x-nav-link to="/about">About</x-nav-link>
-                    <x-nav-link to="/contact">Contact</x-nav-link>
+                    <x-nav-link route="/">Home</x-nav-link>
+                    <x-nav-link route="/jobs">Jobs</x-nav-link>
+                    <x-nav-link route="/about">About</x-nav-link>
+                    <x-nav-link route="/contact">Contact</x-nav-link>
                 </div>
             </div>
         </div>

@@ -1,16 +1,17 @@
-@props(['to'])
+@props(['route'])
 
 @php
     use Illuminate\Support\Facades\Route;
 
-    // If $to matches a registered route name, use route()
-    if (Route::has($to)) {
-        $href = route($to);
-        $isActive = request()->routeIs($to);
-    } else {
+    // If $route matches a registered route name, use route()
+    if (Route::has($route)) {
+        $href = route($route);
+        $isActive = request()->routeIs($route);
+    } 
+    else {
         // Otherwise treat it as a raw URL (like "/" or "/about")
-        $href = url($to);
-        $isActive = request()->is(ltrim($to, '/'));
+        $href = url($route);
+        $isActive = request()->is(ltrim($route, '/'));
     }
 @endphp
 
