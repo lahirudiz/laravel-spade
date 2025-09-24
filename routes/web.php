@@ -8,8 +8,12 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/jobs', function () {
+    //Eager loading
+    $jobs = Job::with('employer')->get();
+    
     return view('jobs', [
-        'jobs' => job::all(),
+        'jobs' => $jobs, #Eager loading
+        //'jobs' => job::all(), #Lazy Loading
     ]);
 })->name('jobs');
 
